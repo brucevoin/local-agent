@@ -1,4 +1,4 @@
-from base_model import BaseModel
+from repository.base_model import BaseModel
 from peewee import *
 
 class Tool(BaseModel):

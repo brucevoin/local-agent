@@ -1,11 +1,25 @@
 import streamlit as st
 from settings import settings_dialog
 
+from websocket_client import send_message
 
 st.title("Local Agent")
 st.write("Your private work assistant")
 
-
+pompt = st.text_input("Enter your prompt here...", key="prompt")
+if pompt:
+    if st.button("Send"):
+        def callback(message):
+            print("****************")
+            print(message)
+        res = send_message(pompt)
+        st.write(res)
+    
+        
+# Variables 
+settings = {}
+toolbox = {}
+model = None
 
 with st.container(border=True):
     with st.sidebar:

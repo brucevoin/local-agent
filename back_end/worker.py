@@ -1,4 +1,4 @@
-
+import uuid
 class Worker:
     def __init__(self):
         self.worker_id = uuid.uuid4()
